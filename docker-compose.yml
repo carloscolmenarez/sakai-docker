@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: sakaidatabase
+      MYSQL_USER: sakaiuser
+      MYSQL_PASSWORD: sakaipassword
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  sakai:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      - JAVA_OPTS=-Dsakai.home=/usr/local/tomcat/sakai
+
+volumes:
+  mysql_data:
