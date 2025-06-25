@@ -1,4 +1,6 @@
-# USAGE
+# sakai-docker: Docker Containers for Sakai LMS
+
+## Quick start
 
 After clone run
 ```
