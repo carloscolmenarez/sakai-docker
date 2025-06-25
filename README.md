@@ -1,4 +1,4 @@
-# sakai-docker: Docker Containers for Sakai LMS
+# sakai-docker: Docker Container for Sakai LMS
 
 ## Quick start
 
